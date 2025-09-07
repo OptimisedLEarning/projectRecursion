@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>element.style {
+}
+<br>html[Attributes Style] {
+    -webkit-locale: "en";
+}
+    <br>user agent stylesheet
+:root {
+    view-transition-name
+<br>The view-transition-name CSS property provides the selected element <br>with a distinct identifying name (a custom-ident) and causes it to participate in a separate view transition from the root view transition — or no view transition if the none value is specified.
+
+<br>Don't show
+: root;
+}
+<br>user agent stylesheet
+html {
+    display: block              };</h2>
+    
+    
+    <script>
+        console.log("Hello, World!");
+
+
+        console.log("This is a test.");
+        console.log("Goodbye, World!");
+        console.log("Another log entry.");
+       //function for fibonacchie sequence
+       // and return a fibonacci series in an array
+
+         function fibs(n) {
+            let arr=[];
+            for(let i=0;i<=n;i++){
+                if(i===0){
+                     arr.push(0);
+                }else if(i===1){
+                       arr.push(1);
+                }else{
+                     arr.push((arr[i-1]+arr[i-2]));
+                }
+                ;
+            }return arr;
+        
+        
+        } 
+         console.log(fibs(10));
+
+          //function for  REversefibonacchie sequence
+       // and return a reverse  fibonacci series in an array
+
+
+
+
+         function fibrev(n) {
+            let arr=[];
+            for(let i=0;i<=n;i++){
+                if(i===0){
+                     arr.push(0);
+                }else if(i===1){
+                       arr.push(1);
+                }else{
+                     arr.push((arr[i-1]+arr[i-2]));
+                }
+                ;
+            }return arr.reverse();
+                 
+        } 
+         console.log(fibrev(10));
+  
+  console.log("This was printed recursively");
+
+
+
+
+/*
+Build a function mergeSort that takes in an array 
+and returns a sorted array, using a recursive merge sort methodology. 
+An input of [3, 2, 1, 13, 8, 5, 0, 1] should return [0, 1, 1, 2, 3, 5, 8, 13], and an input of [105, 79, 100, 110] should return [79, 100, 105, 110].
+Tips:
+
+Think about what the base case is and what behavior is happening again and again 
+and can actually be delegated to someone else (e.g. that same function!).
+It may be helpful to check out the background videos again
+ if you don’t quite understand what should be going on.
+
+*/
+/* pseudo code */
+// function mergeSort(arr) {
+//     // Base case: if the array has 0 or 1 element, it is already sorted
+//     if (arr.length <= 1) {       
+//         return arr; // Return the array as is
+//     }
+//     // Recursive case: split the array into two halves
+//     const mid = Math.floor(arr.length / 2); // Find the middle index
+//     const left = arr.slice(0, mid); // Left half of the array
+//     const right = arr.slice(mid); // Right half of the array
+//     // Recursively sort both halves
+//     const sortedLeft = mergeSort(left); // Sort the left half
+//     const sortedRight = mergeSort(right); // Sort the right half
+//     // Merge the sorted halves
+//     return merge(sortedLeft, sortedRight); // Merge and return the sorted array  
+// }
+// // Helper function to merge two sorted arrays
+// function merge(left, right) {
+//     const result = []; // Array to hold the merged result
+//     let i = 0; // Pointer for the left array
+//     let j = 0; // Pointer for the right array
+//     // Compare elements from both arrays and merge them in sorted order
+//     while (i < left.length && j < right.length) {
+//         if (left[i] < right[j]) {
+//             result.push(left[i]); // Add smaller element to the result
+//             i++; // Move pointer in the left array
+//         } else {
+//             result.push(right[j]); // Add smaller element to the result
+//             j++; // Move pointer in the right array
+//         }
+//     }
+//     // If there are remaining elements in the left array, add them to the result
+//     while (i < left.length) {
+//         result.push(left[i]);
+//         i++;
+//     }
+//     // If there are remaining elements in the right array, add them to the result    
+//     while (j < right.length) {
+//         result.push(right[j]);
+//         j++;
+//     }
+//     return result; // Return the merged sorted array
+// }
+// // Example usage:
+// const array = [3, 2, 1, 13, 8, 5, 0, 1];
+// const sortedArray = mergeSort(array); // Call the mergeSort function
+// console.log(sortedArray); // Output: [0, 1, 1, 2, 3, 5, 8, 13]
+// // Example usage:
+// const array2 = [105, 79, 100, 110];
+// const sortedArray2 = mergeSort(array2); // Call the mergeSort function
+// console.log(sortedArray2); // Output: [79, 100, 105, 110]
+// --- IGNORE ---
+// End of
+//  
+
+
+function mergeSort(arr) {
+    // Base case: if the array has 0 or 1 element, it is already sorted
+    if (arr.length <= 1) {
+        return arr; // Return the array as is
+    }
+    // Recursive case: split the array into two halves
+    const mid = Math.floor(arr.length / 2); // Find the middle index
+    const left = arr.slice(0, mid); // Left half of the array
+    const right = arr.slice(mid); // Right half of the array
+    // Recursively sort both halves
+    const sortedLeft = mergeSort(left); // Sort the left half
+    const sortedRight = mergeSort(right); // Sort the right half
+    // Merge the sorted halves
+    return merge(sortedLeft, sortedRight); // Merge and return the sorted array
+}
+
+// Helper function to merge two sorted arrays
+function merge(left, right) {
+    const result = []; // Array to hold the merged result
+    let i = 0; // Pointer for the left array
+    let j = 0; // Pointer for the right array
+    // Compare elements from both arrays and merge them in sorted order
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]); // Add smaller element to the result
+            i++; // Move pointer in the left array
+        } else {
+            result.push(right[j]); // Add smaller element to the result
+            j++; // Move pointer in the right array
+        }
+    }
+    // If there are remaining elements in the left array, add them to the result
+    while (i < left.length) {
+        result.push(left[i]);
+        i++;
+    }
+    // If there are remaining elements in the right array, add them to the result    
+    while (j < right.length) {
+        result.push(right[j]);
+        j++;
+    }
+    return result; // Return the merged sorted array
+}
+
+
+// Example usage:
+const array = [3, 2, 1, 13, 8, 5, 0, 1,1,0,34,55,69];
+const sortedArray = mergeSort(array); // Call the mergeSort function    
+console.log(sortedArray); // Output: [0, 1, 1, 2, 3, 5, 8, 13]
+
+// Example usage:
+const array2 = [105, 79, 100, 110];
+const sortedArray2 = mergeSort(array2); // Call the mergeSort function
+console.log(sortedArray2); // Output: [79, 100, 105,110];
+
+
+
+// --- IGNORE ---
+// End of file 
+
+
+  
+  /* If we list all the natural numbers below 10
+ that are multiples of  3 or  5 
+ or 
+, we get 3,5,6,9
+ and 
+. The sum of these multiples is  23 
+.
+Find the sum of all the multiples of 3 or 5 
+ below 100
+. */
+
+
+function multiplesOf3and5(n) {
+    let arr=[]
+    let sum = 0; // Initialize sum to 0
+    for (let i = 0; i < n; i++) { // Loop through numbers from 0 to n-1
+        if (i % 3 === 0 || i % 5 === 0) { // Check if the number is a multiple of 3 or 5
+            sum += i; // Add the number to the sum
+         arr.push(i);
+
+        }
+    }
+    return `multiples are ${arr} sum is ${sum}`; // Return the  multiples in s array and  total sumOf all the multiples 
+}
+
+
+console.log(multiplesOf3and5(100)); // Output: 2318
+
+
+
+
+function mulOf5and7(n){
+
+
+    let arr=[];
+    let sum = 0;
+    for (let i=0;i <= n;i++){
+        if((i%5===0)||(i%7===0)){
+           arr.push(i);
+            sum+=i;
+        
+        }
+    } return `multiples of 3 and 7 are ${arr}                     &  sum  of multiples is ${sum}`
+    }
+
+
+    console.log(mulOf5and7(49));
+
+
+/* find the sum of even valued number  for a fibbonacci series  */
+
+function evenFibs(n) {
+    let a = 0, b = 1;
+    let sum = 0;
+    let arr=[];
+    while (b <= n) {
+        if (b % 2 === 0) {
+            sum += b;
+            arr.push(b);
+        }
+        [a, b] = [b, a + b]; // Update a and b to the next two Fibonacci numbers
+    }
+    return `Even Fibonacci numbers are ${arr} & Sum of even Fibonacci numbers up to ${n} is ${sum}`;    
+
+}
+console.log(evenFibs(4000000)); // Output: 4613732
+
+//
+ function revEvnfibs(n){
+    let arr = [];
+    let sumOfEven = 0;
+    let a = 1, b = 2;
+
+    while (a <= n) {
+        if (a % 2 === 0) {
+            arr.push(a);
+            sumOfEven += a;
+        }
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+
+    return `even  Reverse fibs are ${arr.reverse()} & sum is ${sumOfEven}`;
+}   
+
+console.log(revEvnfibs(4000000));
+
+   
+    
+/* 
+The prime factors of  13195 are 5 , 7, 13 and 29 
+What is the largest prime factor of the number 600851475143 ?
+
+*/
+
+
+
+function LargestprimeFactors(n){
+
+    let factors = []
+    // Check for number of 2s that divide n
+    while (n % 2 === 0) {
+        factors.push(2);
+        n = n / 2;
+    }
+    // n must be odd at this point, so we can skip even numbers
+    for (let i = 3; i <= Math.sqrt(n); i += 2) {
+        // While i divides n, add i and divide n
+        while (n % i === 0 && n>0 ){
+            factors.push(i);
+            n = n / i;
+       
+        }
+
+    }   if (n > 2) {
+        factors.push(n);
+    } 
+    
+    factors.reverse();
+    return `prime factors are ${factors} & largest prime factor is ${factors[0]}`;
+
+    
+}
+
+console.log("lets try diffrent number ")
+console.log(LargestprimeFactors(13195));
+console.log(LargestprimeFactors(65771));
+console.log(LargestprimeFactors(13195));
+console.log(LargestprimeFactors(600851475143));
+
+
+
+/*
+
+A palindromic number reads the same both ways. 
+The largest palindrome made from the product of two -digit numbers is .  9009 = 91*99
+Find the largest palindrome made from the product of two   3-digit numbers.
+
+*/
+
+function  isPalindrome(n){
+    let str = n.toString();                                         //convert number to string
+    let reversedStr = str.split('').reverse().join('');           //reverse the string
+    return str === reversedStr;                              //check if the original string is equal to the reversed string
+
+
+
+}
+
+
+function largerNumber_palindrome(){
+     let maximumPalindrome = 0;
+     let factors = [];
+        for(let i=100;i<=999;i++){
+            for(let j=100;j<=999;j++){
+                let product = i*j;
+                if((isPalindrome(product) && product)>maximumPalindrome){     //check if the product is a palindrome and greater than the current maximum
+                    maximumPalindrome = product;                                //update the maximum palindrome
+                    factors = [i,j];                                           //store the factors
+                }
+            }  
+        } return `largest palindrome is ${maximumPalindrome} & factors are ${factors}`;
+}
+
+
+console.log("Finding largest palindrome made from the product of two 3-digit numbers:");
+console.log(largerNumber_palindrome());  
+
+
+
+
+
+
+/* 2520 is the smallest number that can be divided by each of the numbers from 
+ 1to 10  without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the numbers from 
+ 1to 20 
+?
+*/
+
+/**
+ * Calculates the Greatest Common Divisor (GCD) of two numbers using recursion.
+ * This is our first helper function.
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @returns {number} The GCD of a and b.
+ */
+const gcd = (a, b) => {
+  // Base case: If b is 0, a is the GCD.
+  // Recursive step: Otherwise, call gcd with b and the remainder of a/b.
+  return b === 0 ? a : gcd(b, a % b);
+};
+
+/**
+ * Calculates the Least Common Multiple (LCM) for all numbers from 1 to n.
+ * This is our main recursive function.
+ * @param {number} n - The upper limit of the range (e.g., 20).
+ * @returns {number} The LCM of numbers from 1 to n.
+ */
+const lcmOfRange = (n) => {
+  // Base Case: The smallest problem we can solve. The LCM of the range {1} is 1.
+  if (n === 1) {
+    return 1;
+  }
+
+  // Recursive Step:
+  // 1. Get the LCM for the range just below this one (1 to n-1).
+  const previousLcm = lcmOfRange(n - 1);
+
+  // 2. Combine the previous result with the current number 'n'
+  //    using our LCM formula: (a * b) / gcd(a, b).
+  return (previousLcm * n) / gcd(previousLcm, n);
+};
+
+// --- Let's run it for the problem ---
+
+// Call the main function with the target number 20
+const finalAnswer = lcmOfRange(20);
+
+// Print the result to the console
+console.log(finalAnswer); // Expected output: 232792560
+
+
+
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
