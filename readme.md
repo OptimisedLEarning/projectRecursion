@@ -11,6 +11,7 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 ---
+Project recursion 
 
 ### Pseudocode
 
@@ -41,4 +42,62 @@ FUNCTION generate_and_sum_even_fibonacci(limit):
 
     // Return the results
     RETURN sequence_array AND sum_of
-```
+
+    # Merge sort  
+Build a function mergeSort that takes in an array 
+and returns a sorted array, using a recursive merge sort methodology. 
+An input of [3, 2, 1, 13, 8, 5, 0, 1] should return [0, 1, 1, 2, 3, 5, 8, 13], and an input of [105, 79, 100, 110] should return [79, 100, 105, 110].
+Tips:
+
+Think about what the base case is and what behavior is happening again and again 
+and can actually be delegated to someone else (e.g. that same function!).
+It may be helpful to check out the background videos again
+ if you don’t quite understand what should be going on.
+
+*/
+/* pseudo code */
+// function mergeSort(arr) {
+//     // Base case: if the array has 0 or 1 element, it is already sorted
+//     if (arr.length <= 1) {       
+//         return arr; // Return the array as is
+//     }
+//     // Recursive case: split the array into two halves
+//     const mid = Math.floor(arr.length / 2); // Find the middle index
+//     const left = arr.slice(0, mid); // Left half of the array
+//     const right = arr.slice(mid); // Right half of the array
+//     // Recursively sort both halves
+//     const sortedLeft = mergeSort(left); // Sort the left half
+//     const sortedRight = mergeSort(right); // Sort the right half
+//     // Merge the sorted halves
+//     return merge(sortedLeft, sortedRight); // Merge and return the sorted array  
+// }
+// // Helper function to merge two sorted arrays
+// function merge(left, right) {
+//     const result = []; // Array to hold the merged result
+//     let i = 0; // Pointer for the left array
+//     let j = 0; // Pointer for the right array
+//     // Compare elements from both arrays and merge them in sorted order
+//     while (i < left.length && j < right.length) {
+//         if (left[i] < right[j]) {
+//             result.push(left[i]); // Add smaller element to the result
+//             i++; // Move pointer in the left array
+//         } else {
+//             result.push(right[j]); // Add smaller element to the result
+//             j++; // Move pointer in the right array
+//         }
+//     }
+//     // If there are remaining elements in the left array, add them to the result
+//     while (i < left.length) {
+//         result.push(left[i]);
+//         i++;
+//     }
+//     // If there are remaining elements in the right array, add them to the result    
+//     while (j < right.length) {
+//         result.push(right[j]);
+//         j++;
+//     }
+//     return result; // Return the merged sorted array
+// }
+
+    # 
+
